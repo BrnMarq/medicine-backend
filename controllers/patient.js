@@ -24,6 +24,8 @@ const createPatient = async (req, res) => {
 			location,
 		} = req.body;
 
+		console.log(req.body);
+
 		if (!fullName)
 			return res.status(400).send({ error: "fullName is required" });
 
@@ -63,6 +65,8 @@ const updatePatient = async (req, res) => {
 			location,
 		} = req.body;
 
+		console.log(req.body);
+
 		if (!id) return res.status(400).send({ error: "id is required" });
 
 		const updatedPatient = await Patient.update(
@@ -95,6 +99,8 @@ const updatePatient = async (req, res) => {
 const deletePatient = async (req, res) => {
 	try {
 		const { id } = req.body;
+
+		console.log(req.body);
 
 		if (!id) return res.status(400).send({ error: "id is required" });
 
