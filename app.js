@@ -17,7 +17,7 @@ app.get("/", async (req, res) => {
 		await sequelize.authenticate();
 		// const patients = await Patient.sync({ force: true });
 		// console.log("The table for the User model was just (re)created!");
-		console.log("All patients:", JSON.stringify(patients, null, 2));
+		// console.log("All patients:", JSON.stringify(patients, null, 2));
 	} catch (error) {
 		console.error("Unable to connect to the database:", error);
 	}
