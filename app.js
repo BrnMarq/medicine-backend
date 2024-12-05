@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-const port = 3000;
-const sequelize = require("./db");
+const port = process.env.PORT || 4000;
+// const sequelize = require("./db");
 const patientRoutes = require("./routes/patient");
 const bodyParser = require("body-parser");
 // const Patient = require("./models/patient");
@@ -14,7 +14,6 @@ app.use(bodyParser.json());
 
 app.get("/", async (req, res) => {
 	try {
-		await sequelize.authenticate();
 		// const patients = await Patient.sync({ force: true });
 		// console.log("The table for the User model was just (re)created!");
 		// console.log("All patients:", JSON.stringify(patients, null, 2));
